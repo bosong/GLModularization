@@ -1,0 +1,38 @@
+PODS:
+  - ChatUnit (0.0.1)
+  - MapUnit (0.0.1):
+    - SDWebImage (~> 3.7.3)
+  - Masonry (1.0.2)
+  - SDWebImage (3.7.6):
+    - SDWebImage/Core (= 3.7.6)
+  - SDWebImage/Core (3.7.6)
+  - UNRouter (0.0.1)
+  - YYModel (1.0.4)
+
+DEPENDENCIES:
+  - ChatUnit (from `ChatUnit`)
+  - MapUnit (from `MapUnit`)
+  - Masonry (~> 1.0.1)
+  - SDWebImage (~> 3.7.3)
+  - UNRouter (from `Router`)
+  - YYModel (~> 1.0.3)
+
+EXTERNAL SOURCES:
+  ChatUnit:
+    :path: ChatUnit
+  MapUnit:
+    :path: MapUnit
+  UNRouter:
+    :path: Router
+
+SPEC CHECKSUMS:
+  ChatUnit: 3205749c866df37bc79e09ed8c4d34787720790f
+  MapUnit: 1ce2e484edbf3927e7e7761bc4b6b79fbcda698b
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
+  UNRouter: 2961397ab850b5385222d918de9e58e324678288
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+
+PODFILE CHECKSUM: bba479373aea061ab1ad34042abc197ae38d90f4
+
+COCOAPODS: 1.2.1
