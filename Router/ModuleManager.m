@@ -41,7 +41,7 @@
 
 - (void)openProtocol:(Protocol *)protocol config:(void (^)(id))config show:(void (^)(UIViewController *))show
 {
-    Class aCls = [self.classProtocolMap valueForKey:NSStringFromProtocol(protocol)];
+    Class aCls = [self classForProtocol:protocol];
     if (aCls) {
         id module = [[aCls alloc] init];
         if (config) {
@@ -64,6 +64,28 @@
     else {
         NSLog(@"class for protocol <%@> is not registered.", protocol);
     }
+}
+
+- (void)openProtocol:(Protocol *)protocol configClass:(void (^)(__unsafe_unretained Class))config
+{
+    Class aCls = [self classForProtocol:protocol];
+    if (aCls) {
+        if (config) {
+            config(aCls);
+        }
+        else {
+            [self openProtocol:protocol config:nil show:nil];
+        }
+    }
+    else {
+        NSLog(@"class for protocol <%@> is not registered.", protocol);
+    }
+}
+
+- (Class)classForProtocol:(Protocol *)protocol
+{
+    Class aCls = [self.classProtocolMap valueForKey:NSStringFromProtocol(protocol)];
+    return aCls;
 }
 
 - (NSMutableDictionary *)classProtocolMap
